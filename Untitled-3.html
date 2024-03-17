@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Страница с данными</title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+ </head>
+ <body>
+    <div  class="registration">
+        <form>
+            <div class="form-group">
+                <h3 class="text-center">Информация о участнике конференции</h3>
+            </div>
+            <div id = "results" class="form-group">
+            </div>
+            <div class="form-group">                
+                <a href="контрольное задание.html">
+                    <h3 class="text-center">Вернуться на предыдущую страницу</h3>
+                    <h3 class="text-center">Регистрация участников конференции</h3>
+                </a>
+            </div>
+        </form>
+    </div>
+    <script>
+        const ResultsList = document.getElementById('results')
+        new URLSearchParams(window.location.search).forEach((value, name) =>{
+            ResultsList.append(`${name}: ${value}`)
+            ResultsList.append(document.createElement('br'))
+        })
+    </script>
+ </body>
+</html>
